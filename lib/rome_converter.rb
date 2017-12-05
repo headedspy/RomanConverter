@@ -1,4 +1,4 @@
-class RomanConverter
+class RomeConverter
 	def roman_map
 	{
 		1000 => "M",
@@ -52,7 +52,7 @@ class RomanConverter
 			roman_map.values.each do |roman|
 				while str.start_with?(roman)
 					sum += roman_map.invert[roman]
-					str = str.slice(roman.length, str.length)
+					str.slice!(roman.length, str.length)
 				end
 			end
 		end
